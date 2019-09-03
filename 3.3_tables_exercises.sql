@@ -1,5 +1,6 @@
 USE employees;
 
+-- show tsables's columns names and data types
 SHOW tables;
 
 describe employees;
