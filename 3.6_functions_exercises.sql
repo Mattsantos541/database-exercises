@@ -4,9 +4,11 @@ select * from employees where last_name like "E%E" order by emp_no asc;
 select CONCAT(first_name," ", last_name) from employees where last_name like "E%E";
 
 -- Convert the names produced in your last query to all uppercase;
-select uppercase(CONCAT(first_name," ", last_name) from employees where last_name like "E%E");
+select upper(CONCAT(first_name," ", last_name)) from employees where last_name like "E%E";
 
 -- For your query of employees born on Christmas and hired in the 90s, use datediff() to find how many days they have been working at the company (Hint: You will also need to use NOW() or CURDATE())
+select datediff
+
 
 -- Find the smallest and largest salary from the salaries table.
 select * from salaries;
