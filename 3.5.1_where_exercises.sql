@@ -27,6 +27,6 @@ select * from employees where last_name like "e%" or "%e";
 -- Duplicate the previous query and update it to find all employees whose last name starts and ends with 'E' — 899 rows.
 select * from employees where last_name like "e%e";
 -- Find all employees hired in the 90s and born on Christmas — 362 rows.
-select * from employeeds where hire_date between "1990-01-01" and "1999-12-31" and birth_date like %12-25; 
+select * from employees where hire_date between "1990-01-01" and "1999-12-31" and birth_date like %12-25; 
 -- Find all employees with a 'q' in their last name but not 'qu' — 547 rows.
 select * from employees where last_name like "%q" and last_name not like "%qu%";
