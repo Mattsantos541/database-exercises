@@ -17,3 +17,12 @@ on departments.dept_no = dept_manager.dept_no
 join employees 
 on employees.emp_no = dept_manager.emp_no
 where employees.gender = "F";
+
+-- Find the current titles of employees currently working in the Customer Service department.
+select titles.title 
+from titles
+join dept_emp
+on titles.emp_no = dept_emp.emp_no
+join departments
+on dept_emp.dept_no = departments.dept_no
+where departments.dept_name = "customer service"
