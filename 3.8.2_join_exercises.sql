@@ -38,3 +38,7 @@ join employees
 on employees.emp_no = dept_manager.emp_no
 join salaries
 on employees.emp_no = salaries.emp_no;
+
+-- Find the number of employees in each department.
+select dept_emp.dept_no, departments.dept_name, count(*)
+from dept_
