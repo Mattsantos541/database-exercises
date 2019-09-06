@@ -20,7 +20,7 @@ from employees
 join dept_manager on employees.emp_no = dept_manager.emp_no
 where employees.gender = "F";
 
-/* #4Find all the employees that currently have a higher than average salary.
+/* #5 Find all the employees that currently have a higher than average salary.
 154543 rows in total. Here is what the first 5 rows will look like: */
 
 select first_name, last_name
