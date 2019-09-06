@@ -8,3 +8,9 @@ select distinct title from titles
 where emp_no
 in (
 select emp_no from employees where first_name = "Aamod");
+
+-- Find all the current department managers that are female.
+select first_name, last_name
+from employees
+join dept_manager on employees.emp_no = dept_manager.emp_no
+where employees.gender = "F";
