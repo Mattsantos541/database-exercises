@@ -9,6 +9,11 @@ where emp_no
 in (
 select emp_no from employees where first_name = "Aamod");
 
+-- How many people in the employees table are no longer working for the company?
+select count(*)
+from employees
+where emp_no in (select emp_no from dept_emp where to_date > "9999-01-01");
+
 -- Find all the current department managers that are female.
 select first_name, last_name
 from employees
