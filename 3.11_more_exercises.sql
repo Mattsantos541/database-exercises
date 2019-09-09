@@ -269,3 +269,15 @@ where payment_date in date(05-25-2005);
 select *
 from film
 where rating = "G" or "PG-13" or "NC-17";
+
+/* Select all columns from the payment table for payments made between midnight 05/25/2005 and 1 second before midnight 05/26/2005.*/
+/*Select the following columns from the film table for films where the length of the description is between 100 and 120.Hint: total_rental_cost = rental_duration * rental_rate*/
+
+
+select *
+from payment
+where payment_date between "05-25-2005" and "5-26-2005";
+
+select *
+from film
+where length between "100" and "120";
