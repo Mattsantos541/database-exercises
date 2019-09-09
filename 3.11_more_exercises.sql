@@ -348,3 +348,7 @@ from customer
 right join actor on actor.last_name= customer.last_name; 
 
 
+/*Select the customer first_name/last_name and actor first_name/last_name columns from performing an inner join between the customer and actor column on the last_name column in each table. (i.e. customer.last_name = actor.last_name)*/
+select concat(customer.first_name, " ",customer.last_name) as "customer_first_name/customer_last_name", concat(actor.first_name, " ", actor.last_name) as "actor_first_name/actor_last_name"
+from customer
+inner join actor on actor.last_name= customer.last_name; 
