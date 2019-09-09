@@ -362,3 +362,9 @@ left join country on city.country_id= country.country_id;
 
 /*Select the title, description, release year, and language name columns from the film table, performing a left join with the language table to get the "language" column.*/
 select title, description, release_year, language 
+
+/*Select the first_name, last_name, address, address2, city, district, and postal code columns from the staff table, performing 2 left joins with the address table then the city table to get the address and city related columns.*/
+select first_name, last_name, address, address2, city, district, postal_code
+from staff
+left join address on staff.address_id = address.address_id
+left join city on city.city_id = address.city_id;
