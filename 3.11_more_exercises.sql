@@ -352,3 +352,13 @@ right join actor on actor.last_name= customer.last_name;
 select concat(customer.first_name, " ",customer.last_name) as "customer_first_name/customer_last_name", concat(actor.first_name, " ", actor.last_name) as "actor_first_name/actor_last_name"
 from customer
 inner join actor on actor.last_name= customer.last_name; 
+
+
+/*Select the city name and country name columns from the city table, 
+performing a left join with the country table to get the country name column.*/
+select city, country
+from city
+left join country on city.country_id= country.country_id;
+
+/*Select the title, description, release year, and language name columns from the film table, performing a left join with the language table to get the "language" column.*/
+select title, description, release_year, language 
