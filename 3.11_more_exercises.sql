@@ -252,3 +252,20 @@ alter table staff
 drop password;
 
 Select all columns minus the password column from the staff table for rows that do not contain a password.
+
+*Select the phone and district columns from the address table for addresses in California, England, Taipei, or West Java.
+Select the payment id, amount, and payment date columns from the payment table for payments made on 05/25/2005, 05/27/2005, and 05/29/2005. (Use the IN operator and the DATE function, instead of the AND operator as in previous exercises.)
+Select all columns from the film table for films rated G, PG-13 or NC-17.*/
+
+select phone, district
+from address
+where district = ("California" or "England" or "Taipei" or "West Java");
+
+select payment_id, amount, payment_date
+from payment
+where payment_date in date(05-25-2005);
+
+
+select *
+from film
+where rating = "G" or "PG-13" or "NC-17";
