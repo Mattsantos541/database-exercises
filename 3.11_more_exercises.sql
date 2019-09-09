@@ -68,3 +68,16 @@ select actor_id as ID, first_name as "first name", last_name as "last name"
 from actor
 where last_name like "%li%"
 order by last_name, first_name;
+
+
+/*Using IN, display the country_id and country columns for the following 
+countries: Afghanistan, Bangladesh, and China:*/
+
+select country_id, country
+from country
+where country in ("Afghanistan", "Bangladesh", "China");
+
+-- List the last names of all the actors, as well as how many 
+actors have that last name.select last_name as "last name", count(*) as "same name"
+from actor
+group by  last_name  ORDER BY COUNT(*) asc;
