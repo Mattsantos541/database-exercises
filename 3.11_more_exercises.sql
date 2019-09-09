@@ -11,3 +11,9 @@ where country.name = "Santa Monica";
 select country.region as Region, count(*) as num_countries
 from country
 group by  Region ORDER BY COUNT(*) asc;
+
+-- What is the population for each region?
+select country.region as Region, sum(population) as Population
+from country
+group by Region
+order by Population desc;
