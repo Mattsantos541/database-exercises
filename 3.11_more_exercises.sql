@@ -281,3 +281,20 @@ where payment_date between "05-25-2005" and "5-26-2005";
 select *
 from film
 where length between "100" and "120";
+
+/*Select the following columns from the film table for rows where the description begins with "A Thoughtful".
+Select the following columns from the film table for rows where the description ends with the word "Boat".
+Select the following columns from the film table where the description contains the word "Database" and the length of the film is greater than 3 hours.*/
+
+select *
+from film
+where description like "A Thoughtful%";
+
+
+select *
+from film
+where description like "%Boat";
+
+select * 
+from film 
+where description like "%Database%" and length > "180";
