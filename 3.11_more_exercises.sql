@@ -298,3 +298,19 @@ where description like "%Boat";
 select * 
 from film 
 where description like "%Database%" and length > "180";
+
+-- Select all columns from the payment table and only include the first 20 rows.
+-- Select the payment date and amount columns from the payment table for rows where the payment amount is greater than 5, and only select rows whose zero-based index in the result set is between 1000-2000.
+-- Select all columns from the customer table, limiting results to those where the zero-based index is between 101-200.*/
+
+select *
+from payment
+limit 20;
+
+select payment_date as "payment date"
+from payment
+where amount > "5";
+
+select *
+from customer
+where 
