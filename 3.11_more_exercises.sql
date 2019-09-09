@@ -17,3 +17,9 @@ select country.region as Region, sum(population) as Population
 from country
 group by Region
 order by Population desc;
+
+-- What is the population for each continent?
+select country.Continent as Region, sum(population) as Population
+from country
+group by Continent
+order by Population desc;
