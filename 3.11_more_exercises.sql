@@ -144,3 +144,14 @@ select CONCAT(first_name,' ',last_name) as 'Actors in Alone Trip'
 	where actor_id in 
 	(select actor_id from film_actor where film_id = 
 	(select film_id from film where title = 'Alone Trip'));
+
+     /* You want to run an email marketing campaign in Canada, for which you will need 
+the names and email addresses of all Canadian customers.*/
+
+
+select concate(customer.first_name, " ", customer.last_name) as customer, customer.email as "Email"
+from customer as customer
+join address as address on customer.address_id = address.address_id
+join city as country on a.city_id = country.city_id
+join country as city on city.country_id = country.country_id
+where city.country = 'Canada';
