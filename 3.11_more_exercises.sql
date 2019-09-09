@@ -177,3 +177,22 @@ select store as 'Store', total_sales as 'Total Sales' from sales_by_store;
 	join country as cy on cy.country_id = c.country_id
 	group by s.store_id;
 
+-- Write a query to display for each store its store ID, city, and country.
+select s.store_id as 'Store ID', c.city as 'City', cy.country as 'Country'
+	from store as s
+	join address as a on a.address_id = s.address_id
+	join city as c on c.city_id = a.city_id
+	join country as cy on cy.country_id = c.country_id
+	order by s.store_id;
+
+/*List the top five genres in gross revenue in descending order. (Hint: you may need to use the following tables: category, film_category, inventory, payment, and rental.)*/
+
+	select c.name as 'Film', sum(p.amount) as 'Gross Revenue'
+	from category as c
+	join film_category as fc on fc.category_id = c.category_id
+	join inventory as i on i.film_id = fc.film_id
+	join rental as r on r.inventory_id = i.inventory_id
+	join payment as p on p.rental_id = r.rental_id
+	group by c.name
+	order by sum(p.amount) desc
+	limit 5;
