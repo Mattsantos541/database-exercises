@@ -56,3 +56,9 @@ use to obtain this information?*/
 select actor_id as ID, first_name as "first name", last_name as "last name"
 from actor
 where first_name= "Joe";
+
+-- Find all actors whose last name contain the letters "gen":
+select actor_id as ID, first_name as "first name", last_name as "last name"
+from actor
+where last_name like "%gen%";
+
