@@ -155,3 +155,25 @@ join address as address on customer.address_id = address.address_id
 join city as country on a.city_id = country.city_id
 join country as city on city.country_id = country.country_id
 where city.country = 'Canada';
+
+-- Sales have been lagging among young families, and you wish to target all family movies for a promotion. Identify all movies categorized as famiy films.
+
+select title as "family titles"
+from film
+join film_category on film.film_id = film_category.film_id
+join category on category.category_id = film_category.category_id
+where category.name = "Family";
+
+-- Write a query to display how much business, in dollars, each store brought in.
+select store as 'Store', total_sales as 'Total Sales' from sales_by_store;
+
+	select concat(c.city,', ',cy.country) as `Store`, s.store_id as 'Store ID', sum(p.amount) as `Total Sales` 
+	from payment as p
+	join rental as r on r.rental_id = p.rental_id
+	join inventory as i on i.inventory_id = r.inventory_id
+	join store as s on s.store_id = i.store_id
+	join address as a on a.address_id = s.address_id
+	join city as c on c.city_id = a.city_id
+	join country as cy on cy.country_id = c.country_id
+	group by s.store_id;
+
