@@ -104,3 +104,15 @@ would you use to re-create it?*/
     		last_update datetime
 	);
 
+ -- Use JOIN to display the first and last names, as well as the address, of each staff member.
+  select s.first_name as 'First Name', s.last_name as 'Last Name', a.address as 'Address'
+	from staff as s
+	join address as a 
+	ON a.address_id = s.address_id;
+-- Use JOIN to display the total amount rung up by each staff member in August of 2005.
+select concat(staff.first_name,' ',staff.last_name) as "staff memeber", sum(payment.amount) as "Total Amount"
+from payment
+join staff
+on payment.staff_id = staff.staff_id
+where payment_date like '2005-08%'
+group by payment.staff_id;
