@@ -130,3 +130,17 @@ group by title;
 select count(*)
 from film
 where title = "Hunchback Impossible";
+
+
+/*The music of Queen and Kris Kristofferson have seen an unlikely resurgence. As an unintended consequence, films starting with the letters K and Q have also soared in popularity. Use subqueries to display the titles of movies starting with the letters K and Q whose language is English.*/
+select title
+from film
+where title like "K%" or "Q%"
+and language_id = "1";
+
+-- Use subqueries to display all actors who appear in the film Alone Trip.
+select CONCAT(first_name,' ',last_name) as 'Actors in Alone Trip'
+	from actor
+	where actor_id in 
+	(select actor_id from film_actor where film_id = 
+	(select film_id from film where title = 'Alone Trip'));
