@@ -81,3 +81,26 @@ where country in ("Afghanistan", "Bangladesh", "China");
 actors have that last name.select last_name as "last name", count(*) as "same name"
 from actor
 group by  last_name  ORDER BY COUNT(*) asc;
+
+/*List last names of actors and the number of actors who have that last name, 
+but only for names that are shared by at least two actors*/
+select last_name as "last name", count(last_name) as same_name
+from actor
+group by last_name
+having count(last_name) >1;
+
+
+/*You cannot locate the schema of the address table. Which query 
+would you use to re-create it?*/
+	create table address_new (
+		address_id integer(11) NOT NULL,
+    		address varchar(30) NOT NULL,
+    		adress2 varchar(30) NOT NULL,
+    		district varchar(30) NOT NULL,
+    		city_id integer(11) NOT NULL,
+    		postal_code integer(11) NOT NULL,
+    		phone integer(10) NOT NULL,
+    		location varchar(30) NOT NULL,
+    		last_update datetime
+	);
+
