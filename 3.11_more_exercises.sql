@@ -62,3 +62,9 @@ select actor_id as ID, first_name as "first name", last_name as "last name"
 from actor
 where last_name like "%gen%";
 
+/*Find all actors whose last names contain the letters "li". 
+This time, order the rows by last name and first name, in that order.*/
+select actor_id as ID, first_name as "first name", last_name as "last name"
+from actor
+where last_name like "%li%"
+order by last_name, first_name;
