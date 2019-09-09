@@ -211,3 +211,44 @@ select last_name from actor;
 select distinct last_name from actor;
 select distinct postal_code from address;
 select distinct rating from film;
+
+-- Select the title, description, rating, movie length columns from the films table that last 3 hours or longer.
+
+select title, description, rating, length as "movie_length"
+from film
+where length > "180";
+
+/* Select the payment id, amount, and payment date columns from the payments table for payments 
+made on or after 05/27/2005. */
+
+select payment_id, amount, payment_date
+from payment
+where payment_date >"05/26/2005"
+
+/* Select the payment id, amount, and payment date columns from the payments table for payments 
+made on or after 05/27/2005. */
+
+select payment_id, amount, payment_date
+from payment
+where payment_date >"05/26/2005";
+
+-- Select all columns from the customer table for rows that have a last names beginning with S and a first names ending with N.
+select * 
+from customer
+where last_name like "S%" or first_name like "%N";
+-- Select all columns from the customer table for rows where the customer is inactive or has a last name beginning with "M".
+select * 
+from customer
+where active = "0" and last_name like "M%";
+
+/* Select all columns from the category table for rows where the primary key is greater than 4 and the name field begins with either C, S or T.*/
+select * 
+from category
+where category_id > "4" and name like ("C%", "S%", "T%");
+
+
+Select all columns minus the password column from the staff table for rows that contain a password.
+alter table staff
+drop password;
+
+Select all columns minus the password column from the staff table for rows that do not contain a password.
