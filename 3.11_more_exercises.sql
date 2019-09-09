@@ -311,6 +311,25 @@ select payment_date as "payment date"
 from payment
 where amount > "5";
 
-select *
-from customer
-where 
+/*Select all columns from the film table and order rows by the length field in ascending order.
+Select all distinct ratings from the film table ordered by rating in descending order.
+Select the payment date and amount columns from the payment table for the first 20 payments ordered by payment amount in descending order.
+Select the title, description, special features, length, and rental duration columns from the film table for the first 10 films with behind the scenes footage under 2 hours in length and a rental duration between 5 and 7 days, ordered by length in descending order.*/
+
+select * from film
+order by length asc;
+
+select distinct *
+from film 
+order by rating desc;
+
+select payment_date, amount
+from payment 
+order by amount
+limit 20;
+
+
+select title, description, special_features, length, rental_duration
+from film
+where length < "120" and special_features like "behind the scenes" and rental_duration between "5" and "7"
+limit 10 order by length desc;
