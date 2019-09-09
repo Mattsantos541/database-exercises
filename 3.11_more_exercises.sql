@@ -42,3 +42,9 @@ select region, avg(LifeExpectancy)
 from country
 group by Region
 order by avg(LifeExpectancy);
+
+
+
+use sakila;
+select lower(first_name), lower(last_name)
+from actor;
