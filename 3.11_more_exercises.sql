@@ -116,3 +116,17 @@ join staff
 on payment.staff_id = staff.staff_id
 where payment_date like '2005-08%'
 group by payment.staff_id;
+
+
+
+-- List each film and the number of actors who are listed for that film.
+select film.title, count(*) as no_of_actors
+from film
+join film_actor
+on film.film_id = film_actor.film_id
+group by title;
+
+-- How many copies of the film Hunchback Impossible exist in the inventory system?
+select count(*)
+from film
+where title = "Hunchback Impossible";
