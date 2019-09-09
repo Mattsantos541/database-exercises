@@ -23,3 +23,8 @@ select country.Continent as Region, sum(population) as Population
 from country
 group by Continent
 order by Population desc;
+
+
+-- What is the average life expectancy globally?
+select avg(LifeExpectancy)
+from country;
