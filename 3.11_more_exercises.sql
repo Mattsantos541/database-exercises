@@ -368,3 +368,12 @@ select first_name, last_name, address, address2, city, district, postal_code
 from staff
 left join address on staff.address_id = address.address_id
 left join city on city.city_id = address.city_id;
+
+-- What is the average replacement cost of a film? Does this change depending on the rating of the film?
+select avg(replacement_cost)
+from film;
+
+
+select distinct rating, avg(replacement_cost)
+from film
+group by rating;
