@@ -377,3 +377,18 @@ from film;
 select distinct rating, avg(replacement_cost)
 from film
 group by rating;
+
+-- How many different films of each genre are in the database?
+select category.name as "name", count(category_id) as "count"
+from film_category
+join category on category.category_id = film_category.category_id
+group by film_category.category_id;
+
+
+-- What are the 5 frequently rented films?
+select sum(rental_id)
+from payment
+join film 
+on payment.film_id = film.film_id
+group by film.title
+limit 5;
